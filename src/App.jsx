@@ -10,7 +10,7 @@ function App() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="animate-pulse text-pink-300 text-7xl absolute top-10 left-10">❤️</div>
         <div className="animate-ping text-red-400 text-6xl absolute top-32 right-20">💌</div>
-        <div className="animate-bounce text-pink-500 text-8xl absolute bottom-20 left-1/2 transform -translate-x-1/2">💕</div>
+        <div className="animate-bounce text-pink-500 text-8xl absolute bottom-20 left-1/2 transform -translate-x-1/2 z-0">💕</div>
       </div>
       {!isOpen ? (
         <div
@@ -21,7 +21,7 @@ function App() {
           <p className="text-gray-700 text-lg font-medium">Click to open</p>
         </div>
       ) : (
-        <div className="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto animate-fade-in text-center">
+        <div className="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto animate-fade-in text-center z-10">
           <h2 className="text-2xl font-bold mb-3 text-pink-600">Ms. Sneha Phalswal,</h2>
           <p className="text-lg mb-4">It’s genuinely rare to come across someone like you - beautiful, grounded, and with such a warm nature. In this generation, it feels almost impossible to find someone so effortlessly genuine. I can tell you’re the busy, focused type, and I completely respect that.</p>
           <p className="text-lg mb-4">
