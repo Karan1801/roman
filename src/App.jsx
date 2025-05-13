@@ -1,35 +1,39 @@
-import { useState } from "react";
-import "./App.css";
+import { useState } from 'react';
+import { FaEnvelopeOpenText } from 'react-icons/fa';
+import './App.css';
 
 function App() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-200 to-pink-400 flex items-center justify-center p-4">
-      <div className="text-center">
-        {!open ? (
-          <button
-            className="relative w-32 h-32 bg-red-500 rounded-md shadow-xl transition-transform transform hover:scale-105"
-            onClick={() => setOpen(true)}
-          >
-            <div className="absolute inset-0 bg-white rotate-45 transform scale-75 z-10 rounded-md"></div>
-            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-red-700 rounded-b-md z-0"></div>
-            <span className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white font-semibold">
-              Click Me
-            </span>
-          </button>
-        ) : (
-          <div className="max-w-md p-6 bg-white rounded-lg shadow-lg transition-opacity duration-500 ease-in-out">
-            <h1 className="text-2xl font-bold text-pink-700 mb-4">💌 A Little Note 💌</h1>
-            <p className="text-gray-800">
-              Hey beautiful, would you like to go on a date with me?  
-              🌹 Let's make a memory to cherish forever. 💕  
-              <br />
-              Waiting for your "Yes"! 😊
-            </p>
-          </div>
-        )}
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-red-200 to-pink-300 relative overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="animate-pulse text-pink-300 text-7xl absolute top-10 left-10">❤️</div>
+        <div className="animate-ping text-red-400 text-6xl absolute top-32 right-20">💌</div>
+        <div className="animate-bounce text-pink-500 text-8xl absolute bottom-20 left-1/2 transform -translate-x-1/2">💕</div>
       </div>
+      {!isOpen ? (
+        <div
+          onClick={() => setIsOpen(true)}
+          className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center justify-center cursor-pointer transition-transform hover:scale-105 text-center"
+        >
+          <FaEnvelopeOpenText className="text-red-500 text-5xl mb-2" />
+          <p className="text-gray-700 text-lg font-medium">Click to open</p>
+        </div>
+      ) : (
+        <div className="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto animate-fade-in text-center">
+          <h2 className="text-2xl font-bold mb-3 text-pink-600">Ms. Sneha Phalswal,</h2>
+          <p className="text-lg mb-4">It’s genuinely rare to come across someone like you - beautiful, grounded, and with such a warm nature. In this generation, it feels almost impossible to find someone so effortlessly genuine. I can tell you’re the busy, focused type, and I completely respect that.</p>
+          <p className="text-lg mb-4">
+            But I have a small confession… I’ve never really been the type to chase or constantly message someone, but with you - it’s different. You’re the first girl who’s made me curious to know everything about her, to just have real conversations and enjoy her presence.</p>
+          <p className="text-lg mb-4">
+            Your smile - honestly, I don’t even have words for it. It just makes my day. I won’t lie, I wait for your messages more than I probably should, and every notification I get, a part of me hopes it's you. It’s like you’ve quietly become an obsession, the good kind.</p>
+          <p className="text-lg mb-2">
+            If you don’t mind, I’d really love to take you out on a date sometime. Just to know you better, to make you laugh in person, and to give you my full attention. I understand if you're not ready, or if the timing isn’t right—I just wanted to be honest about how I feel. 💖</p>
+          <p className="text-xl font-semibold mb-4">Will you go on a date with me? 🌹</p>
+          <p className="text-right italic">— Just your humble admirer and biggest fan of your smile. ❤️</p>
+        </div>
+      )}
     </div>
   );
 }
